@@ -1,2 +1,3 @@
-# homework_py_webinar
-my homework
+print"Здравствуй, дивный новый мир!"
+Markdown "1) анализ данных;
+          2) визуализация данных"
