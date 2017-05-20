@@ -1,0 +1,159 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Продвинутый уровень¶\n",
+    "## Задание 2.1\n",
+    "### рассчет прибыли по формуле"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "97969.14166032098"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "200000.0*(((8.0/(100*12))+1)**(5*12))-200000.0"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Сложный уровень\n",
+    "## Задание 3.1\n",
+    "### Записать в последней строке формулу, используя вместо чисел буквы p, f, S, L (переменные) и выполнить ячейку."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "# процентная ставка\n",
+    "p = 8.0\n",
+    "\n",
+    "# сколько раз в год происходит капитализация\n",
+    "f = 12\n",
+    "\n",
+    "# сумма вклада\n",
+    "S = 200000.0\n",
+    "\n",
+    "# количество лет\n",
+    "L = 5"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "97969.14166032098"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "S*(((p/(100*f))+1)**(f*L))-S"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Пересчитать значение прибыли в случае,когда капитализация происходит один раз в год. \n",
+    "### Для этого исправить строку f = 12 на f = 1 и перезапустить ячейку."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "# процентная ставка\n",
+    "p = 8.0\n",
+    "\n",
+    "# сколько раз в год происходит капитализация\n",
+    "f = 1\n",
+    "\n",
+    "# сумма вклада\n",
+    "S = 200000.0\n",
+    "\n",
+    "# количество лет\n",
+    "L = 5"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "93865.61536000011"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "S*(((p/(100*f))+1)**(f*L))-S"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 2",
+   "language": "python",
+   "name": "python2"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
