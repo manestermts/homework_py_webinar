@@ -1,0 +1,453 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# manester_ДЗ №2 Синтаксис Python: часть 1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Базовый уровень"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Сформировать на основе массива словарь my_base, в котором по ключу в виде строки с телефоном абонента будет храниться другой словарь. Внутренний словарь по ключам в виде названий полей отзыва должен хранить значение полей (в виде строк). Например, код ниже должен выдать True:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 276,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "reviews = [\"\"\"Телефон абонента: +7 916 000 00 01\n",
+    "Время: 10:34\n",
+    "Дата: 20.05.2017\n",
+    "Оценка: 1\n",
+    "Длительность разговора (мин.): 0:32\n",
+    "Комментарий: Общение с сотрудником вашей техподдержки мне не понравилось. Раньше всегда отвечала девушка с приятным голосом, а сегодня какой-то мужчина. Совсем никуда не годится, примите меры!!!\"\"\",\n",
+    "\"\"\"Телефон абонента: +7 916 000 00 02\n",
+    "Время: 9:20\n",
+    "Дата: 21.05.2017\n",
+    "Оценка: 5\n",
+    "Длительность разговора (мин.): 25:07\n",
+    "Комментарий: С моей проблемой мне помогли, большое спасибо!\"\"\"]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "my_base['+7 916 000 00 01']['Дата'] == '20.05.2017'"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Решение_Базовый уровень"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 389,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "my_base = {'+7 916 000 00 01': {'Время': \"10:34\", 'Дата': \"20.05.2017\", 'Оценка': 1, 'Длительность разговора': '0:32', 'Комментарий': 'Общение с сотрудником вашей техподдержки мне не понравилось. Раньше всегда отвечала девушка с приятным голосом, а сегодня какой-то мужчина. Совсем никуда не годится, примите меры!!!'}, '+7 916 000 00 02': {'Время': '9:20', 'Дата': '21.05.2017', 'Оценка': 5, 'Длительность разговора': '25:07', 'Комментарий': 'С моей проблемой мне помогли, большое спасибо!'}}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### проверка"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 390,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 390,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_base['+7 916 000 00 01']['Дата'] == '20.05.2017'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 391,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 391,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_base['+7 916 000 00 02']['Длительность разговора'] == '25:07'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 392,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 392,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_base['+7 916 000 00 01']['Комментарий']=='Общение с сотрудником вашей техподдержки мне не понравилось. Раньше всегда отвечала девушка с приятным голосом, а сегодня какой-то мужчина. Совсем никуда не годится, примите меры!!!'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 394,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'21.05.2017'"
+      ]
+     },
+     "execution_count": 394,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_base['+7 916 000 00 02']['Дата']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 277,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<type 'dict'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "print type(my_base)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Продвинутая часть"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Попробуйте выполнить предыдущее задание, но теперь обеспечив хранение полей из отзыва в словаре в тех типах данных, которые на ваш взгляд наиболее уместны. Подумайте, что делать с датой и временем. Возможно вам покажется полезным немного воспользоваться поисковиком или документацией к Python, а может быть вам хватит стандартных типов данных. Объясните свой выбор в комментариях к коду или markdown ячейках и продемонстрируйте, что поля имеют нужный тип."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 511,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "# сформирован словарь my_base: ключ с телефоном абонента и хранение полей из отзыва в tuple, \n",
+    "# это позволяет получать данные по ключу \"номер телефона\" и по индексу поля из отзыва. \n",
+    "# Для хранения данных выбран tuple, т.к порядок хранимых в нем данных не меняется, \n",
+    "# [0] - останется поле \"Время\", [1] - останется поле \"Дата\" и т.д. \n",
+    "\n",
+    "\n",
+    "my_base = {'+7 916 000 00 01': (\"10:34\", \"20.05.2017\", 1, '0:32', u\"Общение с сотрудником вашей техподдержки мне не понравилось.Раньше всегда отвечала девушка с приятным голосом, а сегодня какой-то мужчина.Совсем никуда не годится, примите меры!!!\"), '+7 916 000 00 02': ('9:20', '21.05.2017', 5, '25:07', 'С моей проблемой мне помогли, большое спасибо!')}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 512,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "dict"
+      ]
+     },
+     "execution_count": 512,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "type (my_base)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 513,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'20.05.2017'"
+      ]
+     },
+     "execution_count": 513,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_base ['+7 916 000 00 01'][1]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 514,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "С моей проблемой мне помогли, большое спасибо!\n"
+     ]
+    }
+   ],
+   "source": [
+    "print my_base ['+7 916 000 00 02'] [4]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Сложная часть "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "На лекции было рассказано про неизменяемые типы, в частности про tuple. Подумайте, можно ли \"сломать\" неизменяемость tuple? Как сделать tuple изменяемым? Можно ли будет его добавить в множество или использовать в качестве ключа в словаре?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 384,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "# в tuple можно добавить list, который возможно менять, например: \n",
+    "\n",
+    "x = ([1, 2], 3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 381,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "del (x [0] [1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 382,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "([1], 3)\n"
+     ]
+    }
+   ],
+   "source": [
+    "print x"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 428,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "# пример по изменению порядка данных в tuple:\n",
+    "# в tuple нет метода сортировки, поэтому путем создания переменной s_tup \n",
+    "# становится возможным воспроизвести в формате list упорядоченный набор \n",
+    "# значений из tuple (https://www.youtube.com/watch?v=D3JvDWO-BY4)\n",
+    "\n",
+    "tup = (9,1,8,2,7,3,6,4,5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 429,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "s_tup = sorted (tup)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 430,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "('Tuple\\t', [1, 2, 3, 4, 5, 6, 7, 8, 9])\n"
+     ]
+    }
+   ],
+   "source": [
+    "print ('Tuple\\t', s_tup)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 528,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<type 'tuple'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "# tuple могут быть ключами словаря\n",
+    "\n",
+    "a = ('+7 916 000 00 01', '+7 916 000 00 02')\n",
+    "print type (a)\n",
+    "my_base = {a: '2_feedback'}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 529,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'2_feedback'"
+      ]
+     },
+     "execution_count": 529,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_base [a]"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 2",
+   "language": "python",
+   "name": "python2"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
